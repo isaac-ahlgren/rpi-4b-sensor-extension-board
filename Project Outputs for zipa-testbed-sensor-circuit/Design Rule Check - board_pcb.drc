@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\Loyola\Documents\rpi-4b-sensor-extension-board-main\board_pcb.PcbDoc
+PCB File : C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcb.PcbDoc
 Date     : 3/20/2024
-Time     : 2:42:08 PM
+Time     : 3:09:00 PM
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
 Rule Violations :0
@@ -31,16 +31,12 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
-   Violation between Silk To Solder Mask Clearance Constraint: (0.127mm < 0.254mm) Between Pad U1-17(5.147mm,62.611mm) on Multi-Layer And Track (0.195mm,61.595mm)(36.195mm,61.595mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.127mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (0.127mm < 0.254mm) Between Pad U1-18(2.607mm,62.611mm) on Multi-Layer And Track (0.195mm,61.595mm)(36.195mm,61.595mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.127mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad U1-39(5.147mm,90.551mm) on Multi-Layer And Text "voltkey_pins1" (5.718mm,88.9mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-Rule Violations :3
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad U1-17(5.147mm,62.611mm) on Multi-Layer And Track (0.576mm,62.23mm)(36.576mm,62.23mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad U1-18(2.607mm,62.611mm) on Multi-Layer And Track (0.576mm,62.23mm)(36.576mm,62.23mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :2
 
 Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
-   Violation between Silk To Silk Clearance Constraint: (0.015mm < 0.254mm) Between Text "pir_pins1" (19.106mm,36.314mm) on Top Overlay And Track (0.195mm,36.595mm)(36.195mm,36.595mm) on Top Overlay Silk Text to Silk Clearance [0.015mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.254mm) Between Text "voltkey_pins1" (5.718mm,88.9mm) on Top Overlay And Track (13.75mm,63.908mm)(13.75mm,89.408mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.254mm) Between Text "voltkey_pins1" (5.718mm,88.9mm) on Top Overlay And Track (13.75mm,89.408mm)(31.75mm,89.408mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-Rule Violations :3
+Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
@@ -49,6 +45,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 6
+Violations Detected : 2
 Waived Violations : 0
 Time Elapsed        : 00:00:01
