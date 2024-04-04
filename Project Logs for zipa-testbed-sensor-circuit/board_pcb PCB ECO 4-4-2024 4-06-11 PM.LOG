@@ -1,0 +1,32 @@
+Change Component Comment : Designator=Designator4 Old Comment=Comment New Comment=RASPBERRY_PI_4B_4GB
+Change Component Designator: OldDesignator=Designator4 NewDesignator=U?
+Change component parameters: Designator = "Designator4" ("U?"); Footprint = "MODULE_RASPBERRY_PI_4B_4GB"; UniqueID = "\CHZHEVWX" ("\CHZHEVWX")
+Change component parameters (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RASPBERRY%20PI%204B/4GB/Raspberry+Pi/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Raspberry Pi"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "RASPBERRY PI 4B/4GB"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/RASPBERRY PI 4B/4GB/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RASPBERRY%20PI%204B/4GB/Raspberry+Pi/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3v3 Pin=U?-1
+Added Pin To Net: NetName=+5 Pin=U?-2
+Added Pin To Net: NetName=Netbmp1_6 Pin=U?-3
+Added Pin To Net: NetName=Netbmp1_4 Pin=U?-5
+Added Pin To Net: NetName=GND Pin=U?-6
+Added Pin To Net: NetName=GND Pin=U?-9
+Added Pin To Net: NetName=GND Pin=U?-14
+Added Pin To Net: NetName=GND Pin=U?-20
+Added Pin To Net: NetName=GND Pin=U?-25
+Added Pin To Net: NetName=GND Pin=U?-30
+Added Pin To Net: NetName=Netpir_pins1_3 Pin=U?-32
+Added Pin To Net: NetName=GND Pin=U?-34
+Added Pin To Net: NetName=GND Pin=U?-39
+Added Pin To Net: NetName=NetU?_8 Pin=U?-8
+Added Pin To Net: NetName=NetU?_8 Pin=voltkey_pins1-3
+Added Net: Name=NetU?_8
+Added Pin To Net: NetName=NetU?_10 Pin=U?-10
+Added Pin To Net: NetName=NetU?_10 Pin=voltkey_pins1-4
+Added Net: Name=NetU?_10
+Added Member To Class: ClassName=board Member=Component U? RASPBERRY_PI_4B_4GB
