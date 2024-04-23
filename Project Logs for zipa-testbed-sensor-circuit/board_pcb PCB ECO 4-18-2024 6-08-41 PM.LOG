@@ -1,0 +1,32 @@
+Change component parameters: Designator = "Designator5" ("U?"); Footprint = "MODULE_RASPBERRY_PI_4B_4GB"; UniqueID = "\CHADJKGE" ("\CHADJKGE")
+Change component parameters (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RASPBERRY%20PI%204B/4GB/Raspberry+Pi/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Raspberry Pi"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "RASPBERRY PI 4B/4GB"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/RASPBERRY PI 4B/4GB/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RASPBERRY%20PI%204B/4GB/Raspberry+Pi/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3v3 Pin=Designator5-1
+Added Pin To Net: NetName=+5 Pin=Designator5-2
+Added Pin To Net: NetName=Netbmp1_6 Pin=Designator5-3
+Added Pin To Net: NetName=Netbmp1_4 Pin=Designator5-5
+Added Pin To Net: NetName=GND Pin=Designator5-6
+Added Pin To Net: NetName=GND Pin=Designator5-9
+Added Pin To Net: NetName=GND Pin=Designator5-14
+Added Pin To Net: NetName=GND Pin=Designator5-20
+Added Pin To Net: NetName=GND Pin=Designator5-25
+Added Pin To Net: NetName=GND Pin=Designator5-30
+Added Pin To Net: NetName=GND Pin=Designator5-34
+Added Pin To Net: NetName=GND Pin=Designator5-39
+Added Pin To Net: NetName=NetDesignator5_8 Pin=Designator5-8
+Added Pin To Net: NetName=NetDesignator5_8 Pin=voltkey_pins1-3
+Added Net: Name=NetDesignator5_8
+Added Pin To Net: NetName=NetDesignator5_10 Pin=Designator5-10
+Added Pin To Net: NetName=NetDesignator5_10 Pin=voltkey_pins1-4
+Added Net: Name=NetDesignator5_10
+Added Pin To Net: NetName=NetDesignator5_32 Pin=Designator5-32
+Added Pin To Net: NetName=NetDesignator5_32 Pin=pir_pins1-3
+Added Net: Name=NetDesignator5_32
+Added Member To Class: ClassName=board Member=Component Designator5 Comment

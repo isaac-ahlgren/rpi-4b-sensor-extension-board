@@ -1,0 +1,405 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4/19/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">5:42:22 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc" class="file"><acronym title="C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc">C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">23</td></tr>
+</table>
+</td>
+</table><a name="IDNB1SNKVSCW0T2HYBUIHGAB5WPQBGGC54PMX3KDPVQFVSPFOCYMO"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDE0JR3DN2UEGOJ0EPXTAJA4OL3NBJ35YBFGEBUFLCHXY3RFUVVUVB">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUEWUINMUVY0FCTDDAZF3HXFT0OMSBZKT1LJFZWPMTNXSNH0MCMVH">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJ3HYCRTFOGWJOAACMC2STMNCPDT4Y4IN3AAUIYGXIKGA1AUV3PJO">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUZ1VJ54ZKOWDIPSPWHMHWBY0TL32YWXJUXNZ0UP1OZ0JAPXS5QGB">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSTPCXBWUPSG0PBPTAO5TH3354MIUSBDGUWP5XDEFLZZNIYQQVVIN">Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEUJWJXTWQC4ZL0A2DI4YBVJS0EBJXAW3JHDZHOLNATOWJUJ25NRI">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDL4G5G1UGOFMN2HEH1TRPXNRSJ2WO3C5QB13CZC4WUJVHKU0FWWI">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDGOAP4FSGAC2OOV3CDRT3A52DGSMNZ4BSOQ5YANOKSRF0IWTJ0QN">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCTN2RZMPPVCPETKLNXMATYRVYFT3X3AEDQKP1JI2KUYRJKXZEDL">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUZLL3KSRXMB1OXSKSBP2NGWCYCZOW1EVR1GEPNBYOLDPG31Y1ZDF">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">15</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDZHSKC4YO1I4DT3UYT2Z1FFDPKKQMWWXFDZKIDOTEFDX0B0MXEON">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBMP4D2KU2Z5PLGIMTJLZWQGUZJKHGBXZJQYEXYO2AQZ0Z2SLQF5I">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0U1B3VHNZWFQBPJXOO4Y2SAIEMRORHZZ5ERXAU51H4WVYNUU21K">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">23</td>
+</tr>
+</table><br><a name="IDDL4G5G1UGOFMN2HEH1TRPXNRSJ2WO3C5QB13CZC4WUJVHKU0FWWI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19.06mil|Location2.X=256.531mil|Location1.Y=2302.525mil|Location2.Y=2539.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19.06mil|Location2.X=256.531mil|Location1.Y=2302.525mil|Location2.Y=2539.995mil|Absolute=True">Hole Size Constraint: (6mm &gt; 2.54mm) Pad Free-1(3.5mm,61.5mm) on Multi-Layer Actual Hole Size = 6mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1948.194mil|Location2.X=2185.664mil|Location1.Y=2302.525mil|Location2.Y=2539.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1948.194mil|Location2.X=2185.664mil|Location1.Y=2302.525mil|Location2.Y=2539.995mil|Absolute=True">Hole Size Constraint: (6mm &gt; 2.54mm) Pad Free-2(52.5mm,61.5mm) on Multi-Layer Actual Hole Size = 6mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19.06mil|Location2.X=256.531mil|Location1.Y=19.06mil|Location2.Y=256.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19.06mil|Location2.X=256.531mil|Location1.Y=19.06mil|Location2.Y=256.531mil|Absolute=True">Hole Size Constraint: (6mm &gt; 2.54mm) Pad Free-3(3.5mm,3.5mm) on Multi-Layer Actual Hole Size = 6mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1948.194mil|Location2.X=2185.664mil|Location1.Y=19.06mil|Location2.Y=256.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1948.194mil|Location2.X=2185.664mil|Location1.Y=19.06mil|Location2.Y=256.531mil|Absolute=True">Hole Size Constraint: (6mm &gt; 2.54mm) Pad Free-4(52.5mm,3.5mm) on Multi-Layer Actual Hole Size = 6mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDUZLL3KSRXMB1OXSKSBP2NGWCYCZOW1EVR1GEPNBYOLDPG31Y1ZDF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=212.17mil|Location2.X=223.42mil|Location1.Y=292.17mil|Location2.Y=303.42mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=212.17mil|Location2.X=223.42mil|Location1.Y=292.17mil|Location2.Y=303.42mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.088mm &lt; 0.254mm) Between Pad -1(4.77mm,8.37mm) on Multi-Layer And Track (4.987mm,7.393mm)(22.987mm,7.393mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.088mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=295.694mil|Location2.Y=303.361mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=295.694mil|Location2.Y=303.361mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -1(4.77mm,8.37mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=795.899mil|Location2.Y=803.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=795.899mil|Location2.Y=803.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -11(4.77mm,21.07mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=895.899mil|Location2.Y=903.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=895.899mil|Location2.Y=903.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -13(4.77mm,23.61mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=995.899mil|Location2.Y=1003.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=995.899mil|Location2.Y=1003.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -15(4.77mm,26.15mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=1095.899mil|Location2.Y=1103.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=1095.899mil|Location2.Y=1103.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -17(4.77mm,28.69mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=1195.899mil|Location2.Y=1203.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=1195.899mil|Location2.Y=1203.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -19(4.77mm,31.23mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=189.421mil|Location2.X=203.154mil|Location1.Y=1294.492mil|Location2.Y=1305.742mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=189.421mil|Location2.X=203.154mil|Location1.Y=1294.492mil|Location2.Y=1305.742mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.014mm &lt; 0.254mm) Between Pad -21(4.77mm,33.77mm) on Multi-Layer And Track (4.987mm,32.893mm)(22.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.014mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=189.421mil|Location2.X=203.154mil|Location1.Y=1294.492mil|Location2.Y=1305.742mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=189.421mil|Location2.X=203.154mil|Location1.Y=1294.492mil|Location2.Y=1305.742mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.014mm &lt; 0.254mm) Between Pad -21(4.77mm,33.77mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.014mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=395.899mil|Location2.Y=403.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=395.899mil|Location2.Y=403.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -3(4.77mm,10.91mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=495.899mil|Location2.Y=503.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=495.899mil|Location2.Y=503.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -5(4.77mm,13.45mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=595.899mil|Location2.Y=603.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=595.899mil|Location2.Y=603.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -7(4.77mm,15.99mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=695.899mil|Location2.Y=703.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=192.505mil|Location2.X=200.172mil|Location1.Y=695.899mil|Location2.Y=703.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad -9(4.77mm,18.53mm) on Multi-Layer And Track (4.987mm,7.393mm)(4.987mm,32.893mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=387.925mil|Location2.X=399.175mil|Location1.Y=1760.259mil|Location2.Y=1771.509mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=387.925mil|Location2.X=399.175mil|Location1.Y=1760.259mil|Location2.Y=1771.509mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.188mm &lt; 0.254mm) Between Pad bmp1-7(9.398mm,45.466mm) on Multi-Layer And Region (76 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.188mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.183mil|Location2.X=1787.849mil|Location1.Y=820.777mil|Location2.Y=828.443mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.183mil|Location2.X=1787.849mil|Location1.Y=820.777mil|Location2.Y=828.443mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad pir_pins1-1(45.72mm,21.59mm) on Multi-Layer And Region (76 hole(s)) Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDDZHSKC4YO1I4DT3UYT2Z1FFDPKKQMWWXFDZKIDOTEFDX0B0MXEON"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1717.422mil|Location2.X=1728.672mil|Location1.Y=840.751mil|Location2.Y=853.929mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1717.422mil|Location2.X=1728.672mil|Location1.Y=840.751mil|Location2.Y=853.929mil|Absolute=True">Silk To Silk Clearance Constraint: (0.194mm &lt; 0.254mm) Between Region (0 hole(s)) Top Overlay And Text "pir_pins1" (43.561mm,12.956mm) on Top Overlay Silk Text to Silk Clearance [0.194mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1717.194mil|Location2.X=1728.444mil|Location1.Y=848.928mil|Location2.Y=861.007mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1717.194mil|Location2.X=1728.444mil|Location1.Y=848.928mil|Location2.Y=861.007mil|Absolute=True">Silk To Silk Clearance Constraint: (0.229mm &lt; 0.254mm) Between Region (0 hole(s)) Top Overlay And Text "pir_pins1" (43.561mm,12.956mm) on Top Overlay Silk Text to Silk Clearance [0.229mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1651.18mil|Location2.X=1658.846mil|Location1.Y=806.147mil|Location2.Y=813.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1651.18mil|Location2.X=1658.846mil|Location1.Y=806.147mil|Location2.Y=813.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Region (2 hole(s)) Top Overlay And Text "pir_pins1" (43.561mm,12.956mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1666.24mil|Location2.X=1673.907mil|Location1.Y=976.092mil|Location2.Y=983.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1666.24mil|Location2.X=1673.907mil|Location1.Y=976.092mil|Location2.Y=983.759mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Region (8 hole(s)) Top Overlay And Text "pir_pins1" (43.561mm,12.956mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

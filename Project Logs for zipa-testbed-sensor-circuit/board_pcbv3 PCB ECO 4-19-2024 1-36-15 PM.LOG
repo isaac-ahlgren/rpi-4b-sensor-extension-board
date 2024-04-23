@@ -1,0 +1,8 @@
+Change Component Designator: OldDesignator= NewDesignator=Designator5
+Added Component: Designator=sht1(sht31_footprint)
+Added Pin To Net: NetName=+5 Pin=sht1-1
+Added Pin To Net: NetName=GND Pin=sht1-2
+Added Pin To Net: NetName=Netbmp1_4 Pin=sht1-3
+Added Pin To Net: NetName=Netbmp1_6 Pin=sht1-4
+Added Member To Class: ClassName=board Member=Component Designator5 Comment
+Added Member To Class: ClassName=board Member=Component sht1 SHT31_PINOUT

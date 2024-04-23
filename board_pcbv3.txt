@@ -1,0 +1,10 @@
+Board Information Report
+Filename     : C:\Users\Loyola\Documents\GitHub\rpi-4b-sensor-extension-board\board_pcbv3.PcbDoc
+Date         : 4/19/2024
+Time         : 5:44:08 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 56mmx67.0002mm
+    Components on board, 6
+count : 2
